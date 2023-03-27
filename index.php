@@ -14,8 +14,8 @@
             <h1>SECURITE WEB</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="" class="active">Injection SQL</a></li>
-            <li><a href="">Faille XSS</a></li>
+            <li><a href="/" class="active">Injection SQL</a></li>
+            <li><a href="./faillexss.php">Faille XSS</a></li>
             <li><a href="">OTP Email</a></li>
             <li><a href="">OTP Email</a></li>
         </ul>
