@@ -14,8 +14,8 @@
             <h1>SECURITE WEB</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="" class="active">Injection SQL</a></li>
-            <li><a href="">Faille XSS</a></li>
+            <li><a href="/" class="active">Injection SQL</a></li>
+            <li><a href="./faillexss.php">Faille XSS</a></li>
             <li><a href="">OTP Email</a></li>
             <li><a href="">OTP Email</a></li>
         </ul>
@@ -33,7 +33,7 @@
                 <div class="content-block">
                     <h2>Avec Injection</h2>
                     <form action="./php/avecInjection.php" method="POST">
-                        <input type="password" name="password" placeholder="Tester avec injection" required> <!-- Attribut Password -->
+                        <input type="password" name="password" placeholder="Tester avec injection" required>
                         <button type="submit" name="submit">Valider</button>
                     </form>
                 </div>
