@@ -13,7 +13,7 @@ if ($password) {
     $query->execute(array($password));
 
     if ($query->rowCount() == 1) {
-        header('Location: ../index.php');
+        header('Location: ../index.html');
     } else {
         echo 'Mauvais mot de passe';
     }
