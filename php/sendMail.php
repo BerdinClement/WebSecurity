@@ -20,8 +20,8 @@ function sendMail($to, $name, $otp): bool
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'noreply@clementberdin.fr';                     //SMTP username
-        $mail->Password   = 'Noreply1*';                               //SMTP password
+        $mail->Username   = ''; // Votre identifiant                     //SMTP username
+        $mail->Password   = ''; // Votre mot de passe                              //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
