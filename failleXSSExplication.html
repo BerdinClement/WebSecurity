@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Explication - Injection SQL</title>
+    <title>Explication - Faille XSS</title>
     <link href="./js/reveal/dist/reveal.css" rel="stylesheet">
     <link href="./js/reveal/dist/theme/dracula.css" rel="stylesheet">
     <link href="css/explicationInjection.css" rel="stylesheet">
@@ -16,25 +16,34 @@
     <div class="slides">
         <section>
             <h1>Explication</h1>
-            <h2>Injections <strong>SQL</strong></h2>
+            <h2>Faille <strong>XSS</strong></h2>
         </section>
         <section data-auto-animate>
             <h2>Qu'est-ce que c'est ?</h2>
         </section>
         <section data-auto-animate>
             <h2>Qu'est-ce que c'est ?</h2>
-            <p>Une injection SQL est une attaque qui consiste à envoyer des requêtes SQL à un serveur de base de données. Ces requêtes peuvent être modifiées par l'attaquant pour modifier le comportement de la requête ou pour exécuter des commandes arbitraires sur le serveur de base de données.</p>
+            <p>Une faille XSS est une faille qui consiste à envoyer une balise <strong>script</strong> dans un champs(input) et donc de pouvoir essayer d'injecter un script JavaScript et donc pouvoir faire ce que l'on souhaite dans le script et de potentiellement afficher du contenu qui ne devrait pas être affiché, ou pouvoir récupérer des données avec les liens API,...</p>
+        </section>
+        <section data-markdown>
+            <textarea data-template>
+                ## Dans notre cas ?
+                Dans notre cas, nous allons essayer d'afficher une alerte dans l'input.
+
+                ```js
+                <script>alert('Faille XSS')</script>
+                ```
+            </textarea>
         </section>
         <section data-markdown>
             <textarea data-template>
                 ## Comment résoudre ce problème ?
 
-                Pour résoudre ce problème en PHP, il faut alors utiliser la méthode <strong>prepare</strong> et la méthode <strong>execute</strong> qui va donc créer une requête préparée</p>
+                Pour résoudre ce problème en PHP, il faut alors utiliser la fonction <strong>htmlspecialchars()</strong> qui va encoder les caractères spéciaux en entités HTML, qui ne pourront pas être interprétées par le navigateur WEB</p>
                 ### Exemple
 
                 ```js
-                $query = $bdd->prepare(Votre requête SQL);
-                $query->execute();
+                '&lt;p&gt;' sera convertie en '&amp;lt;p&amp;gt;' et '&lt;/p&gt;' en '&amp;lt;/p&amp;gt;'
                 ```
             </textarea>
         </section>

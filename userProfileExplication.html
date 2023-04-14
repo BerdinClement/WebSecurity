@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Explication - User Profile</title>
+    <link href="./js/reveal/dist/reveal.css" rel="stylesheet">
+    <link href="./js/reveal/dist/theme/dracula.css" rel="stylesheet">
+    <link href="css/explicationInjection.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Explication</h1>
+            <h2><strong>User Profile</strong></h2>
+        </section>
+        <section data-auto-animate>
+            <h2>Qu'est-ce que c'est ?</h2>
+        </section>
+        <section data-auto-animate>
+            <h2>Qu'est-ce que c'est ?</h2>
+            <p>Le user profile, est la page où l'utilisateur va pouvoir voir ses données personnelles et pouvoir les changer. Ici, un utilisateur doit pouvoir utiliser une partie du CRUD, il doit pouvoir modifier des éléments de son profil comme son nom, prénom, et pouvoir supprimer son compte.</p>
+        </section>
+        <section>
+            <h2>Dans notre cas ?</h2>
+            <p>Dans notre cas, nous allons donc préremplir un formulaire avec les champs de l'utilisateur, celui-ci pourra donc en changer le contenu et le sauvegarder, ce qui va provoquer un update sur cet utilisateur en base de données. Et pour la suppression de son compte,il va pouvoir cliquer sur un bouton qui supprimera son compte par rapport à l'id de l'utilisateur pour être spur de la suppression en base de données.</p>
+        </section>
+        <section>
+            <h2>Comment résoudre ce problème ?</h2>
+            <p>Pour résoudre ce problème, il faut alors créer deux fonction qui vont soit permettre la modification de champs d'un utilisateur qui fera un update des données en base. Ou un bouton de suppression qui va récupérer l'utilisateur et donc aussi son ID et nous supprimerons de la base de données avec l'ID, car la suppression par ID est fortement conseillé car plus sûre.</p>
+        </section>
+    </div>
+</div>
+
+<script type="module">
+    import Reveal from './js/reveal/dist/reveal.esm.js';
+    import RevealNotes from './js/reveal/plugin/notes/notes.esm.js';
+    import RevealMarkdownn from './js/reveal/plugin/markdown/markdown.esm.js';
+    import RevealHighlight from './js/reveal/plugin/highlight/highlight.esm.js';
+
+
+    Reveal.initialize({
+        plugins: [RevealNotes, RevealMarkdownn, RevealHighlight]
+    })
+</script>
+</body>
+
+</html>

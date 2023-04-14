@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Explication - OTP Mail</title>
+    <link href="./js/reveal/dist/reveal.css" rel="stylesheet">
+    <link href="./js/reveal/dist/theme/dracula.css" rel="stylesheet">
+    <link href="css/explicationInjection.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Explication</h1>
+            <h2><strong>OTP Mail</strong></h2>
+        </section>
+        <section data-auto-animate>
+            <h2>Qu'est-ce que c'est ?</h2>
+        </section>
+        <section data-auto-animate>
+            <h2>Qu'est-ce que c'est ?</h2>
+            <p>OTP mail, est un système d'authentification via mail. Donc lors d'une tentative de connexion, un mail va être envoyé automatiquement, et il enverra un code de validation qui a une validité de 5min, il faudra donc rentrer ce code pour être enfin connecté.</p>
+        </section>
+        <section>
+            <h2>Dans notre cas ?</h2>
+            <p>Pour essayer, il vous faudra créer un utilisateur avec une adresse e-mail valide, sinon si vous souhaitez passer à la gestion d'un profil vous pouvez vous connecter avec l'utilisateur <strong>admin@admin.fr</strong> et avec comme mot de passe <strong>admin</strong>.</p>
+        </section>
+        <section>
+            <h2>Comment résoudre ce problème ?</h2>
+            <p>Pour résoudre ce problème, nous avons donc utiliser <strong>PHP Mailer</strong>, c'est une bibliothèque PHP qui va donc permettre l'envoie d'un mail. Ici nous l'enverrons de l'adresse noreply@clementberdin.fr, et vous le recevez sur le mail insérer dans l'input. (Attention, pour tester le mail, il faut un user enregistré dans la base, il est possible de créer un utilisateur), faites attention le mail peut être passer dans les indésirables.</p>
+        </section>
+        <section>
+            <h2>Comment crypter ?</h2>
+            <p>Ici nous en avons donc profiter pour crypter les mots de passes lors de la création d'un utilisateur, à l'aide de la fonction hash() propore à PHP, ici nous avons choisi de le faire avec l'algorithme 'sha256' qui génère des hachages irréversibles et uniques</p>
+        </section>
+        <section>
+            <h2>La suite ?</h2>
+            <p>Après être connecté vous allez pouvoir gérer votre profile.</p>
+        </section>
+    </div>
+</div>
+
+<script type="module">
+    import Reveal from './js/reveal/dist/reveal.esm.js';
+    import RevealNotes from './js/reveal/plugin/notes/notes.esm.js';
+    import RevealMarkdownn from './js/reveal/plugin/markdown/markdown.esm.js';
+    import RevealHighlight from './js/reveal/plugin/highlight/highlight.esm.js';
+
+
+    Reveal.initialize({
+        plugins: [RevealNotes, RevealMarkdownn, RevealHighlight]
+    })
+</script>
+</body>
+
+</html>
